@@ -1,9 +1,4 @@
-import fs from 'fs'
-
-const readFile = (path) => {
-	const content = fs.readFileSync(path, 'utf-8').split('\n')
-	return content
-}
+import { readFile } from '../../read-file.js'
 
 const calculate = (path) => {
 	const data = readFile(path)

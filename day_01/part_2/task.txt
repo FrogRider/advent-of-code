@@ -2,5 +2,7 @@ Your calculation isn't quite right. It looks like some of the digits are actuall
 
 Equipped with this new information, you now need to find the real first and last digit on each line.
 
+=====================
+
 sample input should be calculated as 281
 and full input's result calculation is 53221
