@@ -1,0 +1,10 @@
+Any number adjacent to a symbol, even diagonally, is a "part number" and should be included in your sum. (Periods (.) do not count as a symbol.)
+
+In this sample input, two numbers are not part numbers because they are not adjacent to a symbol: 114 (top right) and 58 (middle right). Every other number is adjacent to a symbol and so is a part number
+
+What is the sum of all of the part numbers in the engine schematic?
+
+=====================
+
+sample input should be calculated as 4361
+and full input's result calculation is 536576
