@@ -6,17 +6,12 @@ const transformData = () => {
 	return data.map((el) => el.split(' ').map((number) => +number))
 }
 
-// console.log(transformData())
-
-// accepts array of numbers
 const minus = (input) => {
 	if (input.every((number) => number == 0)) return input
 
 	const result = input.reduce((acc, el, index) => {
-		// console.log(el)
 		if (input.length > 1) {
 			if (index >= 1) {
-				// console.log(el, index)
 				acc.push(+el - +input[index - 1])
 			}
 		}
@@ -24,7 +19,6 @@ const minus = (input) => {
 	}, [])
 
 	return result
-	// return result
 }
 
 const getPathsToZero = () => {
