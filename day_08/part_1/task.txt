@@ -29,4 +29,4 @@ Starting at AAA, follow the left/right instructions. How many steps are required
 =====================
 
 sample input should be calculated as 6
-and full input's result calculation is 
+and full input's result calculation is 19637

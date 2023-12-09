@@ -37,5 +37,5 @@ Find the rank of every hand in your set. What are the total winnings?
 
 =====================
 
-sample input should be calculated as 
-and full input's result calculation is 
+sample input should be calculated as 6440
+and full input's result calculation is 253866470
