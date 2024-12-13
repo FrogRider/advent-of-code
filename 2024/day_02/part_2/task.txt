@@ -1,0 +1,5 @@
+
+=====================
+
+sample input should be calculated as 4
+and full input's result calculation is 658

@@ -1,0 +1,5 @@
+
+=====================
+
+sample input should be calculated as 
+and full input's result calculation is 
