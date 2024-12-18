@@ -25,4 +25,4 @@ How many times does XMAS appear?
 =====================
 
 sample input should be calculated as 18
-and full input's result calculation is 
+and full input's result calculation is 2560

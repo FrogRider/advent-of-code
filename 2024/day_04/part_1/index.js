@@ -20,10 +20,9 @@ function countOccurrences(input, substring) {
 
 const countInRows = () => {
 	const word1 = transformData().data.reduce((acc, curr) => acc += countOccurrences(curr, 'XMAS'),0)
-	// const word2 = transformData().data.reduce((acc, curr) => acc += countOccurrences(curr, 'SAMX'),0)
+	const word2 = transformData().data.reduce((acc, curr) => acc += countOccurrences(curr, 'SAMX'),0)
 
-	// return word1 + word2
-	return word1
+	return word1 + word2
 }
 
 const countInColumns = () => {
@@ -35,10 +34,10 @@ const countInColumns = () => {
 	}).map(arr => arr.join(''))
 
 	const word1 = columnsToLines.reduce((acc, curr) => acc += countOccurrences(curr, 'XMAS'),0)
-	// const word2 = columnsToLines.reduce((acc, curr) => acc += countOccurrences(curr, 'SAMX'),0)
+	const word2 = columnsToLines.reduce((acc, curr) => acc += countOccurrences(curr, 'SAMX'),0)
 
-	// return word1 + word2
-	return word1
+	return word1 + word2
+	// return word1
 
 }
 
@@ -49,31 +48,26 @@ const countInDiagonals = () => {
 	const slices = []
 
 	data.forEach((line, lineIndex) => {
-		// if (lineIndex + wordLength <= yWide) {
-			slices.push([])
-			line.split('').forEach((letter, letterIndex) => {
-				if (letterIndex + wordLength <= xWide) {
-					slices.at(-1).push(line.split('').splice(letterIndex, wordLength))
-				}
-			})
-		// }
-	 })
+		slices.push([])
+		line.split('').forEach((letter, letterIndex) => {
+			if (letterIndex + wordLength <= xWide) {
+				slices.at(-1).push(line.split('').splice(letterIndex, wordLength))
+			}
+		})
+	})
 
 	 const columns = new Array(xWide + 1 - wordLength).fill().map(el => [])
 
 	 slices.forEach((slicesRow) => {
 		slicesRow.forEach((slice, sliceIndex) => {
 			columns[sliceIndex].push(slice)
-			// console.log(slice, sliceIndex);
 		})
 	 })
 
 	const squares = columns.reduce((acc, column) => {
 		column.forEach((slice, index) => {
-			// console.log(index, slice);
 			if (index < (column.length - 3)) {
 				acc.push([...column].splice(index, 4))
-				// console.log(index);
 			}
 		})
 
@@ -84,10 +78,10 @@ const countInDiagonals = () => {
 		const word1 = [square[0][0], square[1][1], square[2][2], square[3][3]].join('')
 		const word2 = [square[0][3], square[1][2], square[2][1], square[3][0]].join('')
 
-		// const words = [word1, word1.split('').reverse().join(''), word2, word2.split('').reverse().join('')]
-		// acc += words.filter(el => el == "XMAS").length + words.filter(el => el == "SAMX").length
-		const words = [word1, word2]
-		acc += words.filter(el => el == "XMAS").length
+		const words = [word1, word1.split('').reverse().join(''), word2, word2.split('').reverse().join('')]
+		acc += words.filter(el => el == "XMAS").length 
+		// const words = [word1, word2]
+		// acc += words.filter(el => el == "XMAS").length
 
 		return acc
 	}, 0)
@@ -98,16 +92,9 @@ const countInDiagonals = () => {
 const makeCalculations = () => {
 	
 
-	console.log(countInDiagonals());
+	return countInRows() + countInColumns() + countInDiagonals()
 }
 
+const path = './input-full.txt'
 
-// const word1 = 'XMAS';
-// const word2 = 'SAMX';
-
-// const path = './input-full.txt'
-const path = './input-sample.txt'
-
-// console.log(countInDiagonals())
-makeCalculations()
-// console.log(transformData().data)
+console.log(makeCalculations());
